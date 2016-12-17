@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{B963CD92-E994-4A6D-87A8-445630AD41BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventTests", "AdventTests\AdventTests.csproj", "{E49F7C03-9383-45B2-B913-B152F8928396}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B963CD92-E994-4A6D-87A8-445630AD41BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B963CD92-E994-4A6D-87A8-445630AD41BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B963CD92-E994-4A6D-87A8-445630AD41BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B963CD92-E994-4A6D-87A8-445630AD41BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E49F7C03-9383-45B2-B913-B152F8928396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E49F7C03-9383-45B2-B913-B152F8928396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E49F7C03-9383-45B2-B913-B152F8928396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E49F7C03-9383-45B2-B913-B152F8928396}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
