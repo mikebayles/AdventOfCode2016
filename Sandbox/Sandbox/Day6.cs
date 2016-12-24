@@ -8,40 +8,50 @@ namespace Sandbox
 {
     public class Day6
     {
-        public void Part1(string[] input)
-        {
-            string[] ret = new string[input[0].Length];
-            for (int i = 0; i < input.Length; i++)
-            {
-                for (int j = 0; j < input[i].Length; j++)
-                {
-                    ret[j] += input[i][j] + "";
-                }
-            }
+        string[] input;
 
-            foreach(var s in ret)
-            {
-                var query = s.GroupBy(a => a).OrderByDescending(g => g.Count()).Select(g => g.Key).First();
-                Console.Write(query.ToString());
-            }
+        public Day6(string[] input)
+        {
+            this.input = input;
         }
 
-        public void Part2(string[] input)
+        public string Part1()
         {
-            string[] ret = new string[input[0].Length];
-            for (int i = 0; i < input.Length; i++)
+            return FindMostPopular(true);
+        }
+
+        public string Part2()
+        {
+            return FindMostPopular(false);
+        }
+
+        private string FindMostPopular(bool desc)
+        {
+            var columns = LinesToColumns();
+
+            string ans = "";
+
+            foreach (var str in columns)
             {
-                for (int j = 0; j < input[i].Length; j++)
+                var query = str.GroupBy(a => a).OrderByDescending(g => g.Count()).Select(g => g.Key);
+                ans += desc ? query.First().ToString() : query.Last().ToString();
+            }
+
+            return ans;
+        }
+
+        private string[] LinesToColumns()
+        {
+            string[] columns = new string[input[0].Length];
+            for (int r = 0; r < input.Length; r++)
+            {
+                for (int c = 0; c < input[r].Length; c++)
                 {
-                    ret[j] += input[i][j] + "";
+                    columns[c] += input[r][c] + "";
                 }
             }
 
-            foreach (var s in ret)
-            {
-                var query = s.GroupBy(a => a).OrderBy(g => g.Count()).Select(g => g.Key).First();
-                Console.Write(query.ToString());
-            }
+            return columns;
         }
     }
 }

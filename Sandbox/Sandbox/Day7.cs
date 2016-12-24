@@ -7,9 +7,15 @@ using System.Threading.Tasks;
 
 namespace Sandbox
 {
-    class Day7
+    public class Day7
     {
-        public void Part1(string[] inputs)
+        string[] inputs;
+        public Day7(string[] inputs)
+        {
+            this.inputs = inputs;
+        }
+
+        public int Part1()
         {
             int counter = 0;
 
@@ -53,17 +59,16 @@ namespace Sandbox
                 }
             }
 
-            Console.WriteLine(counter);
+            return counter;
 
         }
 
-        public void Part2(string[] inputs)
+        public int Part2()
         {
             int counter = 0;
 
             foreach (var input in inputs)
             {
-
                 List<String> hypernets = new List<string>();
                 string hypernetPattern = @"\[\w+\]";
                 Regex regex = new Regex(hypernetPattern);
@@ -81,17 +86,15 @@ namespace Sandbox
                     }
                 }
 
-
                 var cleanInput = Regex.Replace(input, hypernetPattern, "");
 
                 if (hypernets.Any(a => cleanInput.Contains(a)))
                 {
                     counter++;
                 }
-
             }
 
-            Console.WriteLine(counter);
+            return counter;
         }
     }
 }

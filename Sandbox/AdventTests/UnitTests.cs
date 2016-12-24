@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sandbox;
+using System.Linq;
 
 namespace AdventTests
 {
@@ -51,6 +52,37 @@ namespace AdventTests
             Assert.IsTrue(Day5.MD5Hash("abc3231929").StartsWith("00000"));
             Assert.AreEqual("18f47a30", obj.Part1("abc"));
             Assert.AreEqual("05ace8e3", obj.Part2("abc"));
+        }
+
+        [TestMethod]
+        public void TestDay6()
+        {
+            var input = "eedadn\ndrvtee\neandsr\nraavrd\natevrs\ntsrnev\nsdttsa\nrasrtv\nnssdts\nntnada\nsvetve\ntesnvt\nvntsnd\nvrdear\ndvrsen\nenarar".Split('\n');
+            Assert.AreEqual("easter", new Day6(input).Part1());
+
+            Assert.AreEqual("123", new Day6(new string[] { "123" }).Part1());
+            Assert.AreEqual("1", new Day6("1123".Select(a => a.ToString()).ToArray()).Part1());
+            Assert.AreEqual("2", new Day6("112223".Select(a => a.ToString()).ToArray()).Part1());
+
+            Assert.AreEqual("3", new Day6("1123".Select(a => a.ToString()).ToArray()).Part2());
+            Assert.AreEqual("3", new Day6("112223".Select(a => a.ToString()).ToArray()).Part2());
+        }
+
+        [TestMethod]
+        public void TestDay7()
+        {
+            Assert.AreEqual(1, new Day7(new string[] { "abba[mnop]qrst" }).Part1());
+            Assert.AreEqual(0, new Day7(new string[] { "abcd[bddb]xyyx" }).Part1());
+            Assert.AreEqual(0, new Day7(new string[] { "aaaa[qwer]tyui" }).Part1());
+            Assert.AreEqual(1, new Day7(new string[] { "ioxxoj[asdfgh]zxcvbn" }).Part1());
+            Assert.AreEqual(2, new Day7(new string[] { "abba[mnop]qrst", "abcd[bddb]xyyx", "aaaa[qwer]tyui", "ioxxoj[asdfgh]zxcvbn" }).Part1());
+
+
+            Assert.AreEqual(1, new Day7(new string[] { "aba[bab]xyz" }).Part2());
+            Assert.AreEqual(0, new Day7(new string[] { "xyx[xyx]xyx" }).Part2());
+            Assert.AreEqual(1, new Day7(new string[] { "aaa[kek]eke" }).Part2());
+            Assert.AreEqual(1, new Day7(new string[] { "zazbz[bzb]cdb" }).Part2());
+
         }
 
         [TestMethod]
